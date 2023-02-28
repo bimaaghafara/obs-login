@@ -1,5 +1,6 @@
+import { Title } from "components";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { login } from "services";
 
 type TValues = {
@@ -37,11 +38,11 @@ export function LoginPage() {
   return (
     <div>
       <div className="mb-4">
-        <div>OBS REACTJS TEST</div>
+        <Title />
       </div>
       <div className="mb-4">
         <input
-          className="border rounded-md px-2 py-1"
+          className="border border-blue-400 rounded-md px-2 py-1 focus:border-blue-600 focus:outline-0"
           placeholder="User ID"
           value={values.userId}
           onChange={(e) => setValue("userId", e.target.value)}
@@ -49,7 +50,7 @@ export function LoginPage() {
       </div>
       <div className="mb-4">
         <input
-          className="border rounded-md px-2 py-1"
+          className="border border-blue-400 rounded-md px-2 py-1 focus:border-blue-600 focus:outline-0"
           placeholder="Password"
           value={values.password}
           onChange={(e) => setValue("password", e.target.value)}
@@ -57,14 +58,23 @@ export function LoginPage() {
       </div>
       <div className="mb-4">
         <button
-          className="bg-blue-500 text-white rounded-md px-4 py-1"
+          className="bg-gradient-to-b from-blue-200 to-blue-600 text-white rounded-md px-4 py-1"
           onClick={isLoading ? undefined : onSubmit}
         >
           {isLoading ? "Loading..." : "Sign In"}
         </button>
       </div>
-      <div>Forgot My Password</div>
-      {isError && !isLoading && <div>Invalid Credentials!</div>}
+      {isError && !isLoading && (
+        <div className="mb-4 text-red-500">Invalid Credentials</div>
+      )}
+      <div className="mb-4">
+        <Link
+          className="text-blue-600 underline underline-offset-4"
+          to="/forgot-password"
+        >
+          Forgot My Password
+        </Link>
+      </div>
     </div>
   );
 }

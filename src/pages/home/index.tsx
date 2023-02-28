@@ -1,3 +1,9 @@
+import { AuthGuard } from "components";
+
 export function HomePage() {
-  return <div>HomePage</div>;
+  return (
+    <AuthGuard>
+      <div>HomePage</div>
+    </AuthGuard>
+  );
 }

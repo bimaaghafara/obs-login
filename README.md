@@ -17,7 +17,7 @@ npm run start / yarn start
 
 ## Demo
 
-https://obs-login-bimaaghafara.vercel.app/login
+https://obs-login-bimaaghafara.vercel.app
 
 ![login-page](https://github.com/bimaaghafara/obs-login/blob/main/public/login-page.png?raw=true)
 ![home-page](https://github.com/bimaaghafara/obs-login/blob/main/public/home-page.png?raw=true)

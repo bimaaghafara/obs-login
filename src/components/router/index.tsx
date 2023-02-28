@@ -1,10 +1,11 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { HomePage, LoginPage } from "pages";
+import { AuthGuard } from "components/authGuard";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <HomePage />,
+    element: <AuthGuard children={<HomePage />} />,
     errorElement: <div>Page Not Found!</div>,
   },
   {
